@@ -5,7 +5,7 @@
     <the-quiz v-if="index === i">
       
       <template #header>
-        {{question.title}}
+        <div class="title">{{question.title}}</div>
       </template>
       <template #main>
         <label v-for="(response,i) in question.responses" :key="i" :for="index">
@@ -20,7 +20,7 @@
     </the-quiz>
     
    </div>
-   <div class="score" v-if="this.i == this.List.length">Score : {{ n.length }}</div>
+   <div class="score" v-if="this.i == this.List.length">Score : {{ n.length }} /  {{ List.length }}</div>
   </main>
 </template>
 
@@ -161,7 +161,7 @@ selected:false
 
 <style scoped>
 main {
-  background: #161b22;
+  background: #121212;
   height: 100vh;
   display: flex;
   align-items: center;
@@ -170,7 +170,13 @@ main {
 h1 {
   margin-top: 50px;
   color: white;
-  
+  font-size: 36px;
+  color:#88272c;
+}
+.title {
+  font-size: 24px;
+  font-weight: 700;
+  text-align: center;
 }
 label{
   display: block;
@@ -189,16 +195,24 @@ button:hover{
   background: white;
   
 }
+
 .score {
-    background: #30363d;
+    background: #88272c;
     color: #f0f6fc;
-    box-shadow: 1px 1px 5px 0 #f0f6fc;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    width: 300px;
-    font-size:62px;
-    height:50%
+    width: 500px;
+    font-size:36px;
+    height:500px
+}
+@media (max-width:516px) {
+  .score {
+    width: 290px;
+    height: 300px;
+
+  }
+  
 }
 </style>

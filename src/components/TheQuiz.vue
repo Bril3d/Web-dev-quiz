@@ -20,18 +20,23 @@ export default {
 
 <style scoped>
 .container {
-    background: #30363d;
+    background: #88272c;
     color: #f0f6fc;
-    box-shadow: 1px 1px 5px 0 #f0f6fc;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     gap: 20px;
-    padding: 20px;
-    width: 300px;
+    padding: 10px;
+    width: 500px;
     height: 500px;
     
+}
+@media (max-width:516px) {
+.container {
+    width: 290px;
+    height: 300px;
+}
 }
 
 </style>
